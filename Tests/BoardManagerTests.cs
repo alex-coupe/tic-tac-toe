@@ -19,15 +19,7 @@ namespace Tests
             Assert.Equal(expectedResult, boardManager.PrintBoard());
         }
 
-        [Theory]
-        [InlineData("1")]
-        [InlineData("q")]
-        [InlineData("2")]
-        public void placing_piece_is_placed_on_free_spot_correctly(string position)
-        {
-            var boardManager = new BoardManager();
-            boardManager.PlacePiece(position);
-        }
+     
     
     }
 }

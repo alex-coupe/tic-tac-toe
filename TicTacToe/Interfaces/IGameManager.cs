@@ -6,6 +6,7 @@ namespace TicTacToe.Interfaces
 {
     public interface IGameManager
     {
-        string HandlePlayerTurn();
+        string HandleCrossesTurn();
+        string HandleNoughtsTurn(List<string> currentBoard);
     }
 }
