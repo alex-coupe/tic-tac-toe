@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TicTacToe.Interfaces;
 
@@ -17,12 +18,17 @@ namespace TicTacToe
 
         public string HandleNoughtsTurn(List<string> currentBoard)
         {
-            int index = random.Next(1, 9);
-            while(currentBoard[index-1] != "-")
-                index = random.Next(1, 9);
+            if (currentBoard.Any(x => x == "-"))
+            {
+                int index = random.Next(1, 10);
+                while (currentBoard[index - 1] != "-")
+                    index = random.Next(1, 10);
 
-            Console.WriteLine($"Noughts picks {index.ToString()}");
-            return index.ToString();
+                Console.WriteLine($"Noughts picks {index.ToString()}");
+                return index.ToString();
+            }
+            Console.WriteLine("No board spaces left");
+            return "";
         }
     }
 }

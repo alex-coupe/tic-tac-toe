@@ -7,10 +7,10 @@ namespace TicTacToe
 {
     public class BoardManager : IBoardManager
     {
-        private readonly List<string> _board;
-        public BoardManager()
+        private List<string> _board { get; }
+        public BoardManager(List<string> board)
         {
-            _board = new List<string>(9) { "-", "-", "-", "-", "-", "-", "-", "-", "-" };
+            _board = board;
         }
         public string PrintBoard()
         {
@@ -25,7 +25,7 @@ namespace TicTacToe
             if (!validPosition || (numberPosition < 1 || numberPosition > 9))
                 return false;
 
-            if (_board[numberPosition-1] == "-")
+            if (_board[numberPosition - 1] == "-")
             {
                 _board[numberPosition - 1] = crossPiece == true ?  "X" : "O";
                 return true;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TicTacToe
 {
@@ -6,7 +7,7 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
-            var boardManager = new BoardManager();
+            var boardManager = new BoardManager(new List<string>(9) { "-", "-", "-", "-", "-", "-", "-", "-", "-" });
             var gameManager = new GameManager();
             Console.WriteLine("Welcome To Tic-Tac-Toe!");
             Console.WriteLine(boardManager.PrintBoard());
